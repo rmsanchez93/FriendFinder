@@ -163,26 +163,29 @@
         </div>
     </footer>
     <script>
-        $('#submitButton').on('click', function (event) {
+
+        $('#datSubmit').on('click', function (event) {
             event.preventDefault();
             // Gather user inputs
             var userInput = {
                 name: $('#userName').val().trim(),
                 photo: $('#userPhoto').val().trim(),
                 scores: [
-                    $('#q1').val().trim(),
-                    $('#q2').val().trim(),
-                    $('#q3').val().trim(),
-                    $('#q4').val().trim(),
-                    $('#q5').val().trim(),
-                    $('#q6').val().trim(),
-                    $('#q7').val().trim(),
-                    $('#q8').val().trim(),
-                    $('#q9').val().trim(),
-                    $('#q10').val().trim()
+                   
                 ]
             };
+            for(i=1; i<= 10; i++){
+                let score = $('#q'+i).val()
+                userInput.scores.push(parseInt(score[0]));
+            };
+            console.log(userInput);
+            
+            $.post('/api/friends', userInput)
+                  .then(function(data) {
+                      console.log("is this working")
+                  });
         });
+
 
     </script>
 

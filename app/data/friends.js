@@ -99,4 +99,7 @@ var friends= [
         ]
     },
 ]
- module.exports = friends;
+ module.exports.friends = friends;
+ module.exports.push2friends = function (val) {
+    module.exports.friends.push(val)
+ };
