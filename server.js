@@ -36,12 +36,6 @@ app.post("/api/friends", function(req, res){
     friends.push2friends(input);
     console.log(friends.friends);
     
-    // var answers = input.userInput; // maybe link to points?
-    //grabs input
-    // friends.push(answers);
-    // console.log(friends);
-
-
 });
 
 
